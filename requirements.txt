@@ -1,0 +1,3 @@
+Flask==2.3.2
+sqlite3-binary
+win10toast ; sys_platform == 'win32'
