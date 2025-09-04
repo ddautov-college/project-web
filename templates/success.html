@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Регистрация завершена</title>
+  <style>
+    body { 
+        font-family: Arial, sans-serif; 
+        background:#f3f3f3; 
+        display: flex;
+        justify-content: center;
+        padding:50px;
+        text-align:center; 
+    }
+    .card { 
+        display:inline-block; 
+        background:#fff; 
+        padding:30px; 
+        border-radius:12px;
+        box-shadow:0 6px 20px rgba(0,0,0,.12); 
+    }
+    h2 { color:#4CAF50; margin-top:0; }
+    .btn { 
+        display:inline-block; 
+        margin-top:16px; 
+        padding:10px 18px;
+        border-radius:8px;
+        text-decoration:none; 
+        color:#fff; 
+        background:#4CAF50; 
+    }
+    .btn:hover { background:#45a049; }
+    .muted { color:#666; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Спасибо, {{ name }}! 🎉</h2>
+    <p class="muted">Ваша регистрация успешно сохранена.</p>
+    <a class="btn" href="{{ url_for('index') }}">Вернуться к форме</a>
+    <a class="btn" style="background:#2196F3; margin-left:8px;" href="{{ url_for('students') }}">Список студентов</a>
+  </div>
+</body>
+</html>

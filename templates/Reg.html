@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Reg.css') }}">
+</head>
+<body>
+
+    <h2>Форма регистрации студента</h2>
+
+    <form action="{{ url_for('submit_form') }}" method="post">
+        <table>
+            <tr>
+                <td><label for="fname">Имя:</label></td>
+                <td>
+                    <input type="text" id="fname" name="first_name" required>
+                    <span class="tooltip-wrapper" id="fname-icon">
+                        <img src="{{ url_for('static', filename='alert_5610989.png') }}" alt="!" class="tooltip-icon">
+                        <span class="tooltip-text">Имя должно начинаться с заглавной буквы</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="lname">Фамилия:</label></td>
+                <td>
+                    <input type="text" id="lname" name="last_name" required>
+                    <span class="tooltip-wrapper" id="lname-icon">
+                        <img src="{{ url_for('static', filename='alert_5610989.png') }}" alt="!" class="tooltip-icon">
+                        <span class="tooltip-text">Фамилия должна начинаться с заглавной буквы</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="dob">Дата рождения:</label></td>
+                <td><input type="date" id="dob" name="dob" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Пол:</label></td>
+                <td>
+                    <select id="gender" name="gender" required>
+                        <option value="">--Выберите--</option>
+                        <option value="male">Мужской</option>
+                        <option value="female">Женский</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="faculty">Факультет:</label></td>
+                <td>
+                    <select id="faculty" name="faculty" required>
+                        <option value="">--Выберите факультет--</option>
+                        <option value="Accounting and audit">Учет и аудит</option>
+                        <option value="Finance">Финансы</option>
+                        <option value="Management">Менеджмент</option>
+                        <option value="Marketing">Маркетинг</option>
+                        <option value="Jurisprudence">Правоведение</option>
+                        <option value="Software">Программное обеспечение</option>
+                        <option value="Computer hardware and software">Вычислительная техника и программное обеспечение</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Зарегистрироваться">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="{{ url_for('static', filename='Reg.js') }}"></script>
+</body>
+</html>
